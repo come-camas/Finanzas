@@ -41,7 +41,7 @@ namespace Finanzas.Clases
         }
     
         public static List<analisis>Lista_analisis_horizontalE=new List<analisis>();
-        //public static List<analisis>Lista_analisis_horizontalB=new List<analisis>();
+        public static List<analisis>Lista_analisis_horizontalB=new List<analisis>();
             
 
     }

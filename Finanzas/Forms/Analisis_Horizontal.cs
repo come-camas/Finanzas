@@ -11,12 +11,13 @@ using OfficeOpenXml;
 using System.IO;
 using Finanzas.Clases;
 using System.Linq;
+using System.Diagnostics.Eventing.Reader;
 
 namespace Finanzas
 {
     public partial class Analisis_Horizontal : Form
     {
-        List<analisis>analisis_horizontalB=new List<analisis>();
+      
         public Analisis_Horizontal()
         {
             InitializeComponent();
@@ -25,14 +26,30 @@ namespace Finanzas
         private void button1_Click(object sender, EventArgs e)
         {
             ESTADOS_RESULTADO();
+            mostrar();
             resultado();
+
             //BALANCE_GENERAL();
 
 
 
         }
 
+        private void mostrar()
+        {
+            foreach (analisis item in analisis.Lista_analisis_horizontalB)
+            {
+                if (item != null)
+                {
+                    MessageBox.Show(item.Cuenta);
+                }else
+                {
+                    MessageBox.Show("no se han encontrado nada");
+                }
 
+            }
+            
+        }
 
         private void BALANCE_GENERAL()
         {
@@ -55,13 +72,13 @@ namespace Finanzas
 
                         for (int i = 2; i <= filas; i++) // Comenzamos desde 2 para saltar el encabezado
                         {
-                            analisis analisi = new analisis(worksheet.Cells[i, 1].Text.ToString(), Convert.ToDouble(worksheet.Cells[i, 2].Text), Convert.ToDouble(worksheet.Cells[i, 2].Text));
-                            analisis_horizontalB.Add(analisi);
+                            analisis analisi = new analisis(worksheet.Cells[i, 1].Text.ToString(), Convert.ToDouble(worksheet.Cells[i, 2].Text), Convert.ToDouble(worksheet.Cells[i, 3].Text));
+                            analisis.Lista_analisis_horizontalB.Add(analisi);
 
                         };
                     }
 
-                    dataGridView1.DataSource = analisis_horizontalB;
+                    dataGridView1.DataSource = analisis.Lista_analisis_horizontalB;
 
 
                 }
@@ -76,25 +93,33 @@ namespace Finanzas
         private void resultado()
         {
 
-
-
-             var agua = analisis_horizontalB.FirstOrDefault(p => p.Cuenta == "activo") ;
-            
-            // var menos = analisis.Lista_analisis_horizontalB.FirstOrDefault(p => p.Cuenta == "pasivo"); 
-
-            if (agua != null )
+            if (analisis.Lista_analisis_horizontalE != null)
             {
-                double fija = agua._ano1V;
-               // double peso = agua._ano2V;
-               
-                MessageBox.Show("la division de estos dos a;os es: " + (fija / 1));
+                var agua = analisis.Lista_analisis_horizontalE.FirstOrDefault(p => p.Cuenta == "activo");
+               // var menos = analisis.Lista_analisis_horizontalB.FirstOrDefault(p => p.Cuenta == "activo"); 
+
+                if (agua != null )
+                {
+                     double fija = Convert.ToDouble(agua._ano1V);
+                     double peso = agua._ano2V;
+                    
+
+                    MessageBox.Show("la division de estos dos años es: " + (fija / peso));
+
+                }
+                else
+                {
+                    MessageBox.Show("No se han encontrado datos");
+
+                }
 
             }
             else
             {
-                MessageBox.Show("No se han encontrado datos");
-
+                MessageBox.Show("la lista esta vacia");
             }
+
+            
 
 
 
@@ -124,13 +149,13 @@ namespace Finanzas
 
                         for (int i = 2; i <= filas; i++) // Comenzamos desde 2 para saltar el encabezado
                         {
-                            analisis analisi = new analisis(worksheet.Cells[i, 1].Text, Convert.ToDouble(worksheet.Cells[i, 2].Text), Convert.ToDouble(worksheet.Cells[i, 2].Text));
+                            analisis analisi = new analisis(worksheet.Cells[i, 1].Text, Convert.ToDouble(worksheet.Cells[i, 2].Text), Convert.ToDouble(worksheet.Cells[i, 3].Text));
                             analisis.Lista_analisis_horizontalE.Add(analisi);
 
                         };
                     }
 
-                    dataGridView1.DataSource = analisis.Lista_analisis_horizontalE;
+                   // dataGridView1.DataSource = analisis.Lista_analisis_horizontalE;
 
 
 
