@@ -60,6 +60,7 @@
             ClientSize = new Size(1153, 704);
             Controls.Add(dataGridView1);
             Controls.Add(button1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Analisis_Horizontal";
             Text = "Analisis_Horizontal";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

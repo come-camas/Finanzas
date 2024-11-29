@@ -1,3 +1,4 @@
+using Finanzas.Forms;
 using System.IO;
 
 
@@ -5,6 +6,16 @@ namespace Finanzas
 {
     public partial class Form1 : Form
     {
+        Analisis_Horizontal analisi_Horizontal;//ya estsa
+        Analisis_Importe analisi_Importe;
+        Analisis_Vertical analisi_Vertical; // ya esta
+        Apalancamiento_financero apalancamiento_financiero;// ya esta
+        Apalancamiento_importe apalancamiento_importe;
+        Apalancamiento_total apalancamiento_total;// ya esta
+        Apalncamiento_operativo apalancamiento_operativo;//ya esta
+        ratios_financieros ratio;
+        ayuda Ayudas; // ya esta
+
         public Form1()
         {
             InitializeComponent();
@@ -103,6 +114,7 @@ namespace Finanzas
         private void apalncamiento_boton_Click(object sender, EventArgs e)
         {
             apalancamirnto_transicion.Start();
+
         }
 
         private void sidebar__Click(object sender, EventArgs e)
@@ -110,6 +122,135 @@ namespace Finanzas
             slidebar_transicion.Start();
         }
 
-        
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ayuda_boton_Click(object sender, EventArgs e)
+        {
+            if (Ayudas == null)
+            {
+                Ayudas = new ayuda();
+                Ayudas.FormClosed += Ayudo_FormClosed;
+                Ayudas.MdiParent = this;
+                Ayudas.Dock = DockStyle.Fill;
+                Ayudas.Show();
+
+
+            }
+            else
+            {
+                Ayudas.Activate();
+
+            }
+        }
+
+        private void Ayudo_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            Ayudas = null;
+        }
+
+        private void analisi_vertical_boton_Click(object sender, EventArgs e)
+        {
+            if (analisi_Vertical == null)
+            {
+
+                analisi_Vertical = new Analisis_Vertical();
+                analisi_Vertical.FormClosed += Analisi_Vertical_FormClosed;
+                analisi_Vertical.MdiParent = this;
+                analisi_Vertical.Dock = DockStyle.Fill;
+                analisi_Vertical.Show();
+
+            }
+            else
+            {
+                analisi_Vertical.Activate();
+            }
+        }
+
+        private void Analisi_Vertical_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            analisi_Vertical = null;
+        }
+
+        private void analisi_horizontal_boton_Click(object sender, EventArgs e)
+        {
+            if (analisi_Horizontal == null)
+            {
+                analisi_Horizontal = new Analisis_Horizontal();
+                analisi_Horizontal.FormClosed += Analisi_Horizontal_FormClosed;
+                analisi_Horizontal.MdiParent = this;
+                analisi_Horizontal.Dock = DockStyle.Fill;
+                analisi_Horizontal.Show();
+
+            }
+            else { analisi_Horizontal.Activate(); }
+        }
+
+        private void Analisi_Horizontal_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            analisi_Horizontal = null;
+        }
+
+        private void apalancamiento_operativo_boton_Click(object sender, EventArgs e)
+        {
+            if (apalancamiento_operativo == null)
+            {
+                apalancamiento_operativo = new Apalncamiento_operativo();
+                apalancamiento_operativo.FormClosed += Apalancamiento_operativo_FormClosed;
+                apalancamiento_operativo.MdiParent = this;
+                apalancamiento_operativo.Dock = DockStyle.Fill;
+                apalancamiento_operativo.Show();
+
+            }
+            else { apalancamiento_operativo.Activate(); }
+        }
+
+        private void Apalancamiento_operativo_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            apalancamiento_operativo = null;
+        }
+
+        private void apalancamiento_total_boton_Click(object sender, EventArgs e)
+        {
+            if (apalancamiento_total == null)
+            {
+                apalancamiento_total = new Apalancamiento_total();
+                apalancamiento_total.FormClosed += Apalancamiento_total_FormClosed;
+                apalancamiento_total.MdiParent = this;
+                apalancamiento_total.Dock = DockStyle.Fill;
+                apalancamiento_total.Show();
+
+            }
+            else
+            {
+                apalancamiento_total.Activate();
+            }
+        }
+
+        private void Apalancamiento_total_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            apalancamiento_total = null;
+        }
+
+        private void apalancamiento_financiero_boton_Click(object sender, EventArgs e)
+        {
+            if (apalancamiento_financiero==null)
+            {
+                apalancamiento_financiero = new Apalancamiento_financero();
+                apalancamiento_financiero.FormClosed += Apalancamiento_financiero_FormClosed;
+                apalancamiento_financiero.MdiParent=this; 
+                apalancamiento_financiero.Dock = DockStyle.Fill;
+                apalancamiento_financiero.Show();
+            }
+        }
+
+        private void Apalancamiento_financiero_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            apalancamiento_financiero = null;
+        }
+
     }
+
 }

@@ -46,7 +46,6 @@
             panel7 = new Panel();
             Ratios_financieros_boton = new Button();
             analisis_transicion = new System.Windows.Forms.Timer(components);
-            flowLayoutPanel2 = new FlowLayoutPanel();
             apalancamiento_ = new FlowLayoutPanel();
             panel11 = new Panel();
             panel13 = new Panel();
@@ -66,12 +65,7 @@
             panel9 = new Panel();
             panel17 = new Panel();
             Salir_boton = new Button();
-            button4 = new Button();
-            panel4 = new Panel();
-            button8 = new Button();
-            button3 = new Button();
             apalancamirnto_transicion = new System.Windows.Forms.Timer(components);
-            button2 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)sidebar_).BeginInit();
             panel6.SuspendLayout();
@@ -179,7 +173,7 @@
             Analisis_.Controls.Add(panel6);
             Analisis_.Controls.Add(panel12);
             Analisis_.Controls.Add(panel2);
-            Analisis_.Location = new Point(338, 84);
+            Analisis_.Location = new Point(0, 86);
             Analisis_.Margin = new Padding(0);
             Analisis_.Name = "Analisis_";
             Analisis_.Size = new Size(300, 86);
@@ -220,6 +214,7 @@
             analisi_vertical_boton.Text = "         Vertical";
             analisi_vertical_boton.TextAlign = ContentAlignment.MiddleLeft;
             analisi_vertical_boton.UseVisualStyleBackColor = false;
+            analisi_vertical_boton.Click += analisi_vertical_boton_Click;
             // 
             // panel2
             // 
@@ -245,6 +240,7 @@
             analisi_horizontal_boton.Text = "          Horizontal";
             analisi_horizontal_boton.TextAlign = ContentAlignment.MiddleLeft;
             analisi_horizontal_boton.UseVisualStyleBackColor = false;
+            analisi_horizontal_boton.Click += analisi_horizontal_boton_Click;
             // 
             // ayuda_boton
             // 
@@ -261,6 +257,7 @@
             ayuda_boton.Text = "         Ayuda";
             ayuda_boton.TextAlign = ContentAlignment.MiddleLeft;
             ayuda_boton.UseVisualStyleBackColor = false;
+            ayuda_boton.Click += ayuda_boton_Click;
             // 
             // panel7
             // 
@@ -292,14 +289,6 @@
             analisis_transicion.Interval = 20;
             analisis_transicion.Tick += analisis_transicion_Tick;
             // 
-            // flowLayoutPanel2
-            // 
-            flowLayoutPanel2.BackColor = Color.FromArgb(32, 33, 36);
-            flowLayoutPanel2.Location = new Point(713, 118);
-            flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(300, 300);
-            flowLayoutPanel2.TabIndex = 9;
-            // 
             // apalancamiento_
             // 
             apalancamiento_.BackColor = Color.FromArgb(32, 33, 36);
@@ -307,7 +296,7 @@
             apalancamiento_.Controls.Add(panel14);
             apalancamiento_.Controls.Add(panel5);
             apalancamiento_.Controls.Add(panel8);
-            apalancamiento_.Location = new Point(341, 173);
+            apalancamiento_.Location = new Point(3, 175);
             apalancamiento_.Name = "apalancamiento_";
             apalancamiento_.Size = new Size(300, 86);
             apalancamiento_.TabIndex = 10;
@@ -390,6 +379,7 @@
             apalancamiento_operativo_boton.Text = "        Operativo";
             apalancamiento_operativo_boton.TextAlign = ContentAlignment.MiddleLeft;
             apalancamiento_operativo_boton.UseVisualStyleBackColor = false;
+            apalancamiento_operativo_boton.Click += apalancamiento_operativo_boton_Click;
             // 
             // panel19
             // 
@@ -430,6 +420,7 @@
             apalancamiento_financiero_boton.Text = "         Financiero";
             apalancamiento_financiero_boton.TextAlign = ContentAlignment.MiddleLeft;
             apalancamiento_financiero_boton.UseVisualStyleBackColor = false;
+            apalancamiento_financiero_boton.Click += apalancamiento_financiero_boton_Click;
             // 
             // panel8
             // 
@@ -455,6 +446,7 @@
             apalancamiento_total_boton.Text = "         Total";
             apalancamiento_total_boton.TextAlign = ContentAlignment.MiddleLeft;
             apalancamiento_total_boton.UseVisualStyleBackColor = false;
+            apalancamiento_total_boton.Click += apalancamiento_total_boton_Click;
             // 
             // slidebar_transicion
             // 
@@ -466,6 +458,10 @@
             sidebar.AutoScroll = true;
             sidebar.BackColor = Color.FromArgb(23, 24, 29);
             sidebar.Controls.Add(panel7);
+            sidebar.Controls.Add(Analisis_);
+            sidebar.Controls.Add(apalancamiento_);
+            sidebar.Controls.Add(panel9);
+            sidebar.Controls.Add(panel17);
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 50);
             sidebar.Name = "sidebar";
@@ -475,7 +471,7 @@
             // panel9
             // 
             panel9.Controls.Add(Ratios_financieros_boton);
-            panel9.Location = new Point(341, 265);
+            panel9.Location = new Point(3, 267);
             panel9.Name = "panel9";
             panel9.Size = new Size(300, 86);
             panel9.TabIndex = 17;
@@ -483,7 +479,7 @@
             // panel17
             // 
             panel17.Controls.Add(Salir_boton);
-            panel17.Location = new Point(341, 357);
+            panel17.Location = new Point(3, 359);
             panel17.Name = "panel17";
             panel17.Size = new Size(300, 86);
             panel17.TabIndex = 6;
@@ -504,104 +500,23 @@
             Salir_boton.TextAlign = ContentAlignment.MiddleLeft;
             Salir_boton.UseVisualStyleBackColor = false;
             // 
-            // button4
-            // 
-            button4.AutoSize = true;
-            button4.BackColor = Color.FromArgb(32, 33, 36);
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.ForeColor = Color.White;
-            button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(354, 455);
-            button4.Name = "button4";
-            button4.Padding = new Padding(25, 0, 0, 0);
-            button4.Size = new Size(300, 105);
-            button4.TabIndex = 16;
-            button4.Text = "        Horizontal";
-            button4.TextAlign = ContentAlignment.MiddleLeft;
-            button4.UseVisualStyleBackColor = false;
-            // 
-            // panel4
-            // 
-            panel4.Location = new Point(1088, 245);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(300, 86);
-            panel4.TabIndex = 5;
-            // 
-            // button8
-            // 
-            button8.AutoSize = true;
-            button8.BackColor = Color.FromArgb(32, 33, 36);
-            button8.FlatStyle = FlatStyle.Flat;
-            button8.ForeColor = Color.White;
-            button8.Image = (Image)resources.GetObject("button8.Image");
-            button8.ImageAlign = ContentAlignment.MiddleLeft;
-            button8.Location = new Point(354, 595);
-            button8.Name = "button8";
-            button8.Padding = new Padding(25, 0, 0, 0);
-            button8.Size = new Size(300, 105);
-            button8.TabIndex = 14;
-            button8.Text = "        Horizontal";
-            button8.TextAlign = ContentAlignment.MiddleLeft;
-            button8.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.FromArgb(23, 24, 29);
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.ForeColor = Color.White;
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(1030, 634);
-            button3.Name = "button3";
-            button3.Padding = new Padding(25, 0, 0, 0);
-            button3.Size = new Size(320, 107);
-            button3.TabIndex = 15;
-            button3.Text = "        Horizontal";
-            button3.TextAlign = ContentAlignment.MiddleLeft;
-            button3.UseVisualStyleBackColor = false;
-            // 
             // apalancamirnto_transicion
             // 
             apalancamirnto_transicion.Interval = 20;
             apalancamirnto_transicion.Tick += apalancamirnto_transicion_Tick;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(23, 24, 29);
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = Color.White;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(1030, 510);
-            button2.Name = "button2";
-            button2.Padding = new Padding(25, 0, 0, 0);
-            button2.Size = new Size(320, 107);
-            button2.TabIndex = 17;
-            button2.Text = "        Horizontal";
-            button2.TextAlign = ContentAlignment.MiddleLeft;
-            button2.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1478, 929);
-            Controls.Add(button2);
-            Controls.Add(Analisis_);
-            Controls.Add(apalancamiento_);
-            Controls.Add(button4);
-            Controls.Add(panel9);
-            Controls.Add(button3);
-            Controls.Add(panel17);
-            Controls.Add(button8);
-            Controls.Add(panel4);
             Controls.Add(sidebar);
-            Controls.Add(flowLayoutPanel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            IsMdiContainer = true;
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)sidebar_).EndInit();
@@ -625,7 +540,6 @@
             panel9.ResumeLayout(false);
             panel17.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -644,7 +558,6 @@
         private System.Windows.Forms.Timer analisis_transicion;
         private Panel panel12;
         private Button analisi_vertical_boton;
-        private FlowLayoutPanel flowLayoutPanel2;
         private Button analisi_horizontal_boton;
         private FlowLayoutPanel apalancamiento_;
         private Panel panel11;
@@ -661,16 +574,11 @@
         private Button apalancamiento_total_boton;
         private Panel panel5;
         private Panel panel8;
-        private Panel panel4;
-        private Button button8;
-        private Button button3;
         private System.Windows.Forms.Timer apalancamirnto_transicion;
-        private Button button4;
         private Panel panel9;
         private Panel panel15;
         private Button Salir_boton;
         private Panel panel16;
-        private Button button2;
         private Panel panel17;
     }
 }

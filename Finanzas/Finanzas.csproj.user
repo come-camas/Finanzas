@@ -1,13 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="Analisis_Vertical.cs">
+    <Compile Update="Forms\Analisis_Importe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Apalancamiento_financero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Apalancamiento_total.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Apalncamiento_operativo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Apalancamiento_importe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Analisis_Vertical.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Analisis_Horizontal.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\ayuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\ratios_financieros.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

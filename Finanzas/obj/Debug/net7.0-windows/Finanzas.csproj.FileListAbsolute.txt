@@ -42,3 +42,10 @@ C:\Users\moise\source\repos\Finanzas\Finanzas\bin\Debug\net7.0-windows\ReaLTaiiz
 C:\Users\moise\source\repos\Finanzas\Finanzas\obj\Debug\net7.0-windows\Finanzas.Analisis_Horizontal.resources
 C:\Users\moise\source\repos\Finanzas\Finanzas\obj\Debug\net7.0-windows\Finanzas.Analisis_Vertical.resources
 C:\Users\moise\source\repos\Finanzas\Finanzas\obj\Debug\net7.0-windows\Finanzas.sourcelink.json
+C:\Users\moise\source\repos\Finanzas\Finanzas\obj\Debug\net7.0-windows\Finanzas.Forms.Analisis_Importe.resources
+C:\Users\moise\source\repos\Finanzas\Finanzas\obj\Debug\net7.0-windows\Finanzas.Forms.Apalancamiento_financero.resources
+C:\Users\moise\source\repos\Finanzas\Finanzas\obj\Debug\net7.0-windows\Finanzas.Apalancamiento_importe.resources
+C:\Users\moise\source\repos\Finanzas\Finanzas\obj\Debug\net7.0-windows\Finanzas.Forms.Apalancamiento_total.resources
+C:\Users\moise\source\repos\Finanzas\Finanzas\obj\Debug\net7.0-windows\Finanzas.Apalncamiento_operativo.resources
+C:\Users\moise\source\repos\Finanzas\Finanzas\obj\Debug\net7.0-windows\Finanzas.Forms.ayuda.resources
+C:\Users\moise\source\repos\Finanzas\Finanzas\obj\Debug\net7.0-windows\Finanzas.Forms.ratios_financieros.resources
