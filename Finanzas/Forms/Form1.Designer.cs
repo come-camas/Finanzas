@@ -283,6 +283,7 @@
             Ratios_financieros_boton.Text = "          Ratios Financieros";
             Ratios_financieros_boton.TextAlign = ContentAlignment.MiddleLeft;
             Ratios_financieros_boton.UseVisualStyleBackColor = false;
+            Ratios_financieros_boton.Click += Ratios_financieros_boton_Click;
             // 
             // analisis_transicion
             // 

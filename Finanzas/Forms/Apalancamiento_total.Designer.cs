@@ -34,7 +34,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1018, 726);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Apalancamiento_total";
             Text = "Apalancamiento_total";

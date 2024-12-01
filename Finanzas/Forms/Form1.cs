@@ -15,6 +15,7 @@ namespace Finanzas
         Apalncamiento_operativo apalancamiento_operativo;//ya esta
         ratios_financieros ratio;
         ayuda Ayudas; // ya esta
+       
 
         public Form1()
         {
@@ -236,11 +237,11 @@ namespace Finanzas
 
         private void apalancamiento_financiero_boton_Click(object sender, EventArgs e)
         {
-            if (apalancamiento_financiero==null)
+            if (apalancamiento_financiero == null)
             {
                 apalancamiento_financiero = new Apalancamiento_financero();
                 apalancamiento_financiero.FormClosed += Apalancamiento_financiero_FormClosed;
-                apalancamiento_financiero.MdiParent=this; 
+                apalancamiento_financiero.MdiParent = this;
                 apalancamiento_financiero.Dock = DockStyle.Fill;
                 apalancamiento_financiero.Show();
             }
@@ -251,6 +252,24 @@ namespace Finanzas
             apalancamiento_financiero = null;
         }
 
+        private void Ratios_financieros_boton_Click(object sender, EventArgs e)
+        {
+            if (ratio == null)
+            {
+                ratio=new ratios_financieros();
+                ratio.FormClosed += Ratio_FormClosed;
+                ratio.MdiParent = this;
+                ratio.Dock = DockStyle.Fill;
+                ratio.Show();
+                
+
+            }
+        }
+
+        private void Ratio_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            ratio = null;
+        }
     }
 
 }

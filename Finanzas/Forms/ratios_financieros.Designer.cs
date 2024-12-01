@@ -28,13 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            airButton1 = new ReaLTaiizor.Controls.AirButton();
             SuspendLayout();
+            // 
+            // airButton1
+            // 
+            airButton1.Customization = "7e3t//Ly8v/r6+v/5ubm/+vr6//f39//p6en/zw8PP8UFBT/gICA/w==";
+            airButton1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            airButton1.Image = null;
+            airButton1.Location = new Point(889, 630);
+            airButton1.Name = "airButton1";
+            airButton1.NoRounding = false;
+            airButton1.Size = new Size(150, 68);
+            airButton1.TabIndex = 0;
+            airButton1.Text = "airButton1";
+            airButton1.Transparent = false;
+            airButton1.Click += airButton1_Click;
             // 
             // ratios_financieros
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1051, 710);
+            Controls.Add(airButton1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ratios_financieros";
             Text = "ratios_financieros";
@@ -42,5 +58,7 @@
         }
 
         #endregion
+
+        private ReaLTaiizor.Controls.AirButton airButton1;
     }
 }

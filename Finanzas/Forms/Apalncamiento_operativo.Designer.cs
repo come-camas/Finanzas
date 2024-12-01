@@ -34,7 +34,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1031, 706);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Apalncamiento_operativo";
             Text = "Apalncamiento_operativo";
