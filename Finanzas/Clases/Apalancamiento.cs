@@ -8,9 +8,9 @@ namespace Finanzas.Clases
 {
     public class Apalancamiento
     {
-        string Cuenta;
-        double Monto_1;
-        double Monto_2;
+       public  string Cuenta;
+       public double Monto_1;
+       public double Monto_2;
 
         public Apalancamiento()
         {

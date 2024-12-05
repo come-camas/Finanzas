@@ -2,6 +2,7 @@ using Finanzas.Forms;
 using System.IO;
 
 
+
 namespace Finanzas
 {
     public partial class Form1 : Form
@@ -116,6 +117,24 @@ namespace Finanzas
         {
             apalancamirnto_transicion.Start();
 
+            if (apalancamiento_importe == null)
+            {
+                apalancamiento_importe = new Apalancamiento_importe();
+                apalancamiento_importe.FormClosed += Apalancamiento_importe_FormClosed;
+                apalancamiento_importe.MdiParent = this;
+                apalancamiento_importe.Dock = DockStyle.Fill;
+                apalancamiento_importe.Show();
+
+            }else {
+
+                apalancamiento_importe.Activate();            
+            }
+
+        }
+
+        private void Apalancamiento_importe_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            apalancamiento_importe = null;
         }
 
         private void sidebar__Click(object sender, EventArgs e)
@@ -206,7 +225,11 @@ namespace Finanzas
 
             }
             else { apalancamiento_operativo.Activate(); }
+
+            //crear grafico
         }
+
+
 
         private void Apalancamiento_operativo_FormClosed(object? sender, FormClosedEventArgs e)
         {
@@ -228,6 +251,7 @@ namespace Finanzas
             {
                 apalancamiento_total.Activate();
             }
+            //crear grafico
         }
 
         private void Apalancamiento_total_FormClosed(object? sender, FormClosedEventArgs e)
@@ -244,7 +268,9 @@ namespace Finanzas
                 apalancamiento_financiero.MdiParent = this;
                 apalancamiento_financiero.Dock = DockStyle.Fill;
                 apalancamiento_financiero.Show();
-            }
+            }else { apalancamiento_financiero.Activate(); } 
+
+            //crear grafico
         }
 
         private void Apalancamiento_financiero_FormClosed(object? sender, FormClosedEventArgs e)
@@ -256,14 +282,15 @@ namespace Finanzas
         {
             if (ratio == null)
             {
-                ratio=new ratios_financieros();
+                ratio = new ratios_financieros();
                 ratio.FormClosed += Ratio_FormClosed;
                 ratio.MdiParent = this;
                 ratio.Dock = DockStyle.Fill;
                 ratio.Show();
-                
+
 
             }
+            else { ratio.Activate(); }
         }
 
         private void Ratio_FormClosed(object? sender, FormClosedEventArgs e)

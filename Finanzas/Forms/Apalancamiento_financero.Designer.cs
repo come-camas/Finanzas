@@ -28,19 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            formsPlot1 = new ScottPlot.WinForms.FormsPlot();
             SuspendLayout();
+            // 
+            // formsPlot1
+            // 
+            formsPlot1.DisplayScale = 1.5F;
+            formsPlot1.Location = new Point(425, 286);
+            formsPlot1.Name = "formsPlot1";
+            formsPlot1.Size = new Size(225, 225);
+            formsPlot1.TabIndex = 0;
             // 
             // Apalancamiento_financero
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1029, 743);
+            Controls.Add(formsPlot1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Apalancamiento_financero";
             Text = "Apalancamiento_financero";
+            Load += Apalancamiento_financero_Load;
             ResumeLayout(false);
         }
 
         #endregion
+
+        private ScottPlot.WinForms.FormsPlot formsPlot1;
     }
 }

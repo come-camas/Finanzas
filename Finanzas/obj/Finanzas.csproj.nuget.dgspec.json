@@ -53,9 +53,29 @@
               "target": "Package",
               "version": "[0.9.7, )"
             },
+            "LiveCharts.Core": {
+              "target": "Package",
+              "version": "[0.9.8, )"
+            },
+            "LiveCharts.WinForms": {
+              "target": "Package",
+              "version": "[0.9.7.1, )"
+            },
             "ReaLTaiizor": {
               "target": "Package",
               "version": "[3.8.0.7, )"
+            },
+            "ScottPlot": {
+              "target": "Package",
+              "version": "[5.0.47, )"
+            },
+            "ScottPlot.WinForms": {
+              "target": "Package",
+              "version": "[5.0.47, )"
+            },
+            "itextsharp": {
+              "target": "Package",
+              "version": "[5.5.13.4, )"
             }
           },
           "imports": [
